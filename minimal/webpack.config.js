@@ -3,7 +3,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+/**
+ * @returns {webpack.Configuration}
+ */
+module.exports = () => ({
   devServer: {
     static: path.resolve(__dirname, './dist'),
     port: 2021,
@@ -58,4 +61,4 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
-};
+});
